@@ -24,6 +24,8 @@ public class Main {
         String valaszai = handler.valaszai(id);
         System.out.println(valaszai + "   (a versenyző válasza)\n");
 
+        System.out.println("4. feladat:\n" + handler.getHelyes() + "   (a helyes megoldás)\n" + handler.eltalatakStr(valaszai) + "   (a versenyző helyes válaszai)\n");
+
         debugger();
     }
 }

@@ -70,4 +70,18 @@ public class TesztversenyHandler {
         }
         return null; // TODO
     }
+
+    public String eltalatakStr(String tippek) {
+        // TODO
+        String result = "";
+        for (int i = 0; i < tippek.length(); i++) {
+            if (tippek.charAt(i) == getHelyes().charAt(i)) {
+                result += "+";
+            } else {
+                result += " ";
+            }
+        }
+
+        return result;
+    }
 }
