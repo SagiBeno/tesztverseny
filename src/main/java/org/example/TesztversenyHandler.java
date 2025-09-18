@@ -73,15 +73,15 @@ public class TesztversenyHandler {
 
     public String eltalatakStr(String tippek) {
         // TODO
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < tippek.length(); i++) {
             if (tippek.charAt(i) == getHelyes().charAt(i)) {
-                result += "+";
+                result.append("+");
             } else {
-                result += " ";
+                result.append(" ");
             }
         }
 
-        return result;
+        return result.toString();
     }
 }
