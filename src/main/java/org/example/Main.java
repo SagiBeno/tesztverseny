@@ -26,6 +26,12 @@ public class Main {
 
         System.out.println("4. feladat:\n" + handler.getHelyes() + "   (a helyes megoldás)\n" + handler.eltalatakStr(valaszai) + "   (a versenyző helyes válaszai)\n");
 
+        System.out.print("5. feladat: A feladat sorszáma = ");
+        int feladatSorszam = in.nextInt();
+        double[] helyesFeladatStat = handler.helyesFeladatStat(feladatSorszam);
+        //System.out.println("A feladatra " + (int)helyesFeladatStat[0] + " fő, a versenyzők " + Math.round(helyesFeladatStat[1] * 100.0) /100.0 + " %-a adott helyes választ.\n");
+        System.out.println("A feladatra " + String.format("%.0f", helyesFeladatStat[0]) + " fő, a versenyzők " + String.format("%.2f", helyesFeladatStat[1]) + " %-a adott helyes választ.\n");
+
         debugger();
     }
 }

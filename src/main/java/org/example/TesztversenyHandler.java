@@ -84,4 +84,17 @@ public class TesztversenyHandler {
 
         return result.toString();
     }
+
+    public double[] helyesFeladatStat(int feladatSorszam) {
+        double[] result = new double[2];
+        // TODO
+        for (int i = 0; i < getValaszokDb(); i++) {
+            if (eltalatakStr(valaszok[i][1]).charAt(feladatSorszam - 1) == '+') {
+                result[0]++;
+            }
+        }
+
+        result[1] = result[0] / getValaszokDb() * 100;
+        return result;
+    }
 }
