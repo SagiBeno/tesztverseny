@@ -101,6 +101,33 @@ public class TesztversenyHandler {
 
     public void calculatePoints() {
 
+        for (int i = 0; i < getValaszokDb(); i++) {
+            String eltalaltaStr = eltalatakStr(valaszok[i][1]);
+            Integer sum = 0;
+            for (int j = 0; j < eltalaltaStr.length(); j++) {
+                if (eltalaltaStr.charAt(j) == '+') {
+                    switch (j) {
+                        case 1-1, 2-1, 3-1, 4-1, 5-1: {
+                            sum += 3;
+                            break;
+                        }
+                        case 6-1,7-1,8-1,9-1,10-1: {
+                            sum += 4;
+                            break;
+                        }
+                        case 11-1, 12-1, 13-1: {
+                            sum += 5;
+                            break;
+                        }
+                        case 14-1: {
+                            sum += 6;
+                            break;
+                        }
+                    }
+                }
+            }
+            valaszok[i][2] = sum.toString();
+        }
     }
 
     public void pointsToFile(String filename) {
