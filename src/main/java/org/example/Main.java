@@ -12,8 +12,9 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         handler = new TesztversenyHandler();
 
-        System.out.println("1. feladat: Az adatok beolvasása");
+        System.out.println("1. feladat: Az adatok beolvasása\n");
         handler.readFile("valaszok.txt");
+
         debugger();
     }
 }
