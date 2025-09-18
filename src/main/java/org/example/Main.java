@@ -2,7 +2,7 @@ package org.example;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     private static TesztversenyHandler handler;
@@ -37,6 +37,11 @@ public class Main {
         handler.calculatePoints();
         handler.pointsToFile("pontok.txt");
 
+        Set<Integer> pointSet = handler.pointsSet();
+        List<Integer> pointsList = new ArrayList<>(pointSet);
+        pointsList.sort((e1, e2) -> e2-e1);
+        System.out.println("7. feladat: A verseny legjobbjai:");
+        handler.printWinners(pointsList.get(0), pointsList.get(1), pointsList.get(2));
         debugger();
     }
 }
