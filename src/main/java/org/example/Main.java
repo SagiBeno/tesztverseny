@@ -15,6 +15,8 @@ public class Main {
         System.out.println("1. feladat: Az adatok beolvasása\n");
         handler.readFile("sourceFiles/valaszok.txt");
 
+        System.out.println("2. feladat: A vetélkedőn " + handler.getValaszokDb() + " versenyző indult.\n");
+
         debugger();
     }
 }
