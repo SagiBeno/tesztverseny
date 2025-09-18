@@ -32,6 +32,10 @@ public class Main {
         //System.out.println("A feladatra " + (int)helyesFeladatStat[0] + " fő, a versenyzők " + Math.round(helyesFeladatStat[1] * 100.0) /100.0 + " %-a adott helyes választ.\n");
         System.out.println("A feladatra " + String.format("%.0f", helyesFeladatStat[0]) + " fő, a versenyzők " + String.format("%.2f", helyesFeladatStat[1]) + " %-a adott helyes választ.\n");
 
+        System.out.println("6. feladat: A versenyzők pontszámának meghatározása\n");
+        handler.calculatePoints();
+        handler.pointsToFile("pontok.txt");
+
         debugger();
     }
 }

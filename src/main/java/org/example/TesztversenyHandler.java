@@ -68,11 +68,10 @@ public class TesztversenyHandler {
                 return valaszok[i][1];
             }
         }
-        return null; // TODO
+        return null;
     }
 
     public String eltalatakStr(String tippek) {
-        // TODO
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < tippek.length(); i++) {
             if (tippek.charAt(i) == getHelyes().charAt(i)) {
@@ -87,7 +86,6 @@ public class TesztversenyHandler {
 
     public double[] helyesFeladatStat(int feladatSorszam) {
         double[] result = new double[2];
-        // TODO
         for (int i = 0; i < getValaszokDb(); i++) {
             if (eltalatakStr(valaszok[i][1]).charAt(feladatSorszam - 1) == '+') {
                 result[0]++;
@@ -96,5 +94,13 @@ public class TesztversenyHandler {
 
         result[1] = result[0] / getValaszokDb() * 100;
         return result;
+    }
+
+    public void calculatePoints() {
+
+    }
+
+    public void pointsToFile(String filename) {
+
     }
 }
