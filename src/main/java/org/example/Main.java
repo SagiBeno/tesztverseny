@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.util.*;
 
 public class Main {
+    public static boolean isRunningTest = false;
+
+    private static final String testAzon = "AB123";
+    private static final int testFeladatSorszam = 10;
+
     private static TesztversenyHandler handler;
 
     private static void debugger() {
@@ -20,14 +25,14 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         System.out.print("3. feladat: A versenyző azonosítója = ");
-        String id = in.nextLine();
+        String id = isRunningTest ? testAzon : in.nextLine();
         String valaszai = handler.valaszai(id);
         System.out.println(valaszai + "   (a versenyző válasza)\n");
 
         System.out.println("4. feladat:\n" + handler.getHelyes() + "   (a helyes megoldás)\n" + handler.eltalatakStr(valaszai) + "   (a versenyző helyes válaszai)\n");
 
         System.out.print("5. feladat: A feladat sorszáma = ");
-        int feladatSorszam = in.nextInt();
+        int feladatSorszam = isRunningTest ? testFeladatSorszam : in.nextInt();
         double[] helyesFeladatStat = handler.helyesFeladatStat(feladatSorszam);
         //System.out.println("A feladatra " + (int)helyesFeladatStat[0] + " fő, a versenyzők " + Math.round(helyesFeladatStat[1] * 100.0) /100.0 + " %-a adott helyes választ.\n");
         System.out.println("A feladatra " + String.format("%.0f", helyesFeladatStat[0]) + " fő, a versenyzők " + String.format("%.2f", helyesFeladatStat[1]) + " %-a adott helyes választ.\n");
