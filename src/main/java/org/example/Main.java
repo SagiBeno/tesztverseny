@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -10,7 +11,7 @@ public class Main {
         int i = 0;
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         handler = new TesztversenyHandler();
 
         System.out.println("1. feladat: Az adatok beolvasása\n");

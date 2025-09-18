@@ -2,6 +2,8 @@ package org.example;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -130,7 +132,12 @@ public class TesztversenyHandler {
         }
     }
 
-    public void pointsToFile(String filename) {
-
+    public void pointsToFile(String filename) throws IOException {
+        File fki = new File(filename);
+        FileWriter fwki = new FileWriter(fki);
+        for (int i = 0; i < getValaszokDb(); i++) {
+            fwki.write(valaszok[i][0] + ";" + valaszok[i][2] + "\n");
+        }
+        fwki.close();
     }
 }
