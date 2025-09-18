@@ -41,6 +41,7 @@ public class Main {
         pointsList.sort((e1, e2) -> e2-e1);
         System.out.println("7. feladat: A verseny legjobbjai:");
         handler.printWinners(pointsList.get(0), pointsList.get(1), pointsList.get(2));
+
         debugger();
     }
 }
